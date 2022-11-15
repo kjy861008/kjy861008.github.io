@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>for 문</title>
+<title>방문 시간에 따라 변하는 배경색</title>
 </head>
 <body>
-<h3>for 문으로 10px~35px 크기 출력<h3>
+<h3>페이지 방문 초시간이 짝수면 violet, 홀수이면 lightskyblue 배경<h3>
 <hr>
 <script>
-  for(var size=10;size<=35;size+=5) {//5씩 증가
-    document.write("<span');
-    document.write("style='font-size:' + size + "px'>");
-    document.write(size + "px");
-    document.write("</span>");
+  var current = new Date();//현재 시간을 가진 Date 객체 생성
+  if(current.getSeconds()%2==0)
+    document.body.style.backgroundColor = "violet";
+  else
+    document.body.style.backgroundColor = "lightskyblue"; 
+  
+    document.write("현재시간:");
+    document.write(current.getHours(),"tl,");
+    document.write(current.getHours(),"tl,");
+    document.write(current.getHours(),"tl,"");
   }
 </script>
 </body>
