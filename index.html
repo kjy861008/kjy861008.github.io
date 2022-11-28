@@ -1,39 +1,84 @@
 <!DOCTYPE html>
-<html><head><title>프로토타입으로 객체 만들기</title>
-<script>
-  //프로토타입 만들기:생성자 함수 작성
-  funcion Account(owner, code, balance){
-    //프로퍼티만들기
-    this.owner=owner;    //계좌 주인 프로퍼티 만들기
-    this.code=code;      //계좌 코드 프로퍼티 만들기
-    this.balance=balance;//잔액 프로퍼티 만들기
-    
-    //메소드 만들기
-    this.inquiry=function(){return this.balance;}
-    this.deposit=function(money){this.balance+=money;}
-    this.withdraw=function(money){//예금인출,money는 인출하는 액수
-      //money가 balance보다 작다고 가정
-      this.balance-=money;
-      return money;
-    }
-  }
-</script></head>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>콩국수의 웹페이지</title>
+  <link rel="stylesheet" href="style.css"><!-- 꾸밈에 적용할 css 링크 걸어주기 -->
+</head>
 <body>
-<h3>Account 프로토타입만들기</h3>
-<hr>
-<script>
-  //new 연산자 이용하여 계좌 객체 생성
-  var account=new Account("황기태","111",35000);
-  
-  //객체 활용
-  document.write("account:");
-  document.write(account.owner+",");
-  document.write(account.code+",");
-  document.write(account.balance+"<br>");
-  
-  account.deposit(10000);//10000원 저금
-  document.write("10000원 저금 후 잔액은"+account.inquiry()+"<br>");
-  account.withdraw(5000);//5000원 인출
-  document.write("5000원 인출 후 잔액은"+account.inquiry()+"<br>");
-</script>
-</body></html>  
+  <div id="container">
+    <header id="header">
+        <div id ="logo">
+            <h1>いらしゃいませ</h1><!--'어서오세요'라는 뜻입니다.-->
+        </div>
+    </header>
+    <aside id="sidebar">
+      <div id = "image">
+         <img src="kongguksu.jpg"><!--이미지 경로-->
+      </div>
+      <div id ="introduction">
+        <h3><b>紹介します！</b></h3><!--'소개합니다'라는 뜻입니다.-->
+        <ul>
+            <li> <b style="color:rgb(161, 121, 121);">이름 : </b> 콩국수</li>
+            <li> <b style="color:rgb(161, 121, 121);">나이 : </b> 22살</li>
+            <li> <b style="color:rgb(161, 121, 121);">전공 : </b>IT 융합학과</li>
+            <li> <b style="color:rgb(161, 121, 121);">소개 : </b>안녕하세요! 배우는 것을 좋아하는 콩국수입니다.
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        컴퓨터와 일본어를 특히 좋아합니다.</p>
+
+            </li>
+        </ul>
+      </div>
+      
+    </aside>
+
+    <section id="contents">
+      <h2>콩국수의 취향</h2>
+      <div id = "links">
+        <ul>
+            <li>
+                <p>분위기</p>
+            </li>
+            <li>
+                <p>취미</p>
+            </li>
+            <li>
+                <p>영화</p>
+            </li>
+            <li>
+                <p>음악</p>
+            </li>
+        </ul>
+    </div>    
+    </section>
+
+    <section id="snsLinks">
+        <h2>콩국수의 SNS</h2>
+        <div id = "snslinks">
+            <ul>
+                <li>
+                    <a href="#"><!--개인 링크를 걸면 됩니다.-->
+                        <span id="quick-icon1"></span>
+                        <p>인스타그램</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"><!--개인 링크를 걸면 됩니다.-->
+                        <span id="quick-icon2"></span>
+                        <p>블로그</p>
+                    </a>
+                </li>
+            </ul>
+        </div>    
+    </section>
+    
+    
+    <footer id="footer">
+        <div id="last">
+        <h1>ありがとうございます。</h1><!--감사합니다 라는 뜻입니다.-->
+        </div>
+    <footer>
+  </div>
+</body>
+</html>
+[출처] [css, html] 간단한 개인 웹페이지 만들기(소스코드 포함)|작성자 콩국수
